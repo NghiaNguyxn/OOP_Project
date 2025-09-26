@@ -22,7 +22,7 @@ public class Home_Frame extends JFrame{
         qlspButton = new JButton();
         qlspButton.setLayout(new BorderLayout());
 
-        JLabel iconLabel1 = new JLabel(new ImageIcon("qlsp.png"));
+        JLabel iconLabel1 = new JLabel(new ImageIcon("image/qlsp.png"));
         iconLabel1.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 0));
         JLabel textLabel1 = new JLabel("Quản lý sản phẩm", SwingConstants.CENTER);
         textLabel1.setFont(new Font("Inter", Font.BOLD, 30));
@@ -55,7 +55,7 @@ public class Home_Frame extends JFrame{
         tao_gio_hangButton = new JButton();
         tao_gio_hangButton.setLayout(new BorderLayout());
 
-        JLabel iconLabel2 = new JLabel(new ImageIcon("giohang.png"));
+        JLabel iconLabel2 = new JLabel(new ImageIcon("image/giohang.png"));
         iconLabel2.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 0));
         JLabel textLabel2 = new JLabel("Tạo giỏ hàng", SwingConstants.CENTER);
         textLabel2.setFont(new Font("Inter", Font.BOLD, 30));
@@ -73,7 +73,7 @@ public class Home_Frame extends JFrame{
         dangxuatButton = new JButton();
         dangxuatButton.setLayout(new BorderLayout());
 
-        JLabel iconLabel4 = new JLabel(new ImageIcon("logout.png"));
+        JLabel iconLabel4 = new JLabel(new ImageIcon("image/logout.png"));
         iconLabel4.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 0));
         JLabel textLabel4 = new JLabel("Đăng xuất", SwingConstants.CENTER);
         textLabel4.setFont(new Font("Inter", Font.BOLD, 30));
@@ -106,7 +106,7 @@ public class Home_Frame extends JFrame{
         exitButton = new JButton();
         exitButton.setLayout(new BorderLayout());
 
-        JLabel iconLabel3 = new JLabel(new ImageIcon("exit.png"));
+        JLabel iconLabel3 = new JLabel(new ImageIcon("image/exit.png"));
         iconLabel3.setBorder(BorderFactory.createEmptyBorder(0, 18, 0, 0));
         JLabel textLabel3 = new JLabel("Thoát", SwingConstants.CENTER);
         textLabel3.setFont(new Font("Inter", Font.BOLD, 30));
