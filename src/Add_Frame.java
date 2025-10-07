@@ -98,7 +98,7 @@ public class Add_Frame extends JFrame{
             String soluongStr = TextField.getText().trim();
 
             if(maSP.isEmpty() || ten.isEmpty() || donvi.isEmpty() || giaStr.isEmpty() || soluongStr.isEmpty()){
-                JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin!");
+                JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin!", "Lỗi", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
@@ -109,12 +109,12 @@ public class Add_Frame extends JFrame{
                 soluong = Integer.parseInt(soluongStr);
             }
             catch(NumberFormatException ex){
-                JOptionPane.showMessageDialog(this, "Giá và số lượng phải là số hợp lệ!");
+                JOptionPane.showMessageDialog(this, "Giá và số lượng phải là số hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
             if(insertProduct(maSP, ten, donvi, gia, soluong)){
-                JOptionPane.showMessageDialog(this, "Thêm sản phẩm thành công!");
+                JOptionPane.showMessageDialog(this, "Thêm sản phẩm thành công!", "Thành công", JOptionPane.INFORMATION_MESSAGE);
                 MaSPTextField.setText("");
                 TenSPTextField.setText("");
                 DonViTextField.setText("");
@@ -122,7 +122,7 @@ public class Add_Frame extends JFrame{
                 TextField.setText("");
             }
             else{
-                JOptionPane.showMessageDialog(this, "Sản phẩm đã tồn tại!");
+                JOptionPane.showMessageDialog(this, "Sản phẩm đã tồn tại!", "Lỗi", JOptionPane.ERROR_MESSAGE);
             }
         });
 
