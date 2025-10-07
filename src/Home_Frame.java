@@ -7,7 +7,7 @@ public class Home_Frame extends JFrame{
     JLabel titleLabel, footerLabel;
     JPanel panel;
 
-    Home_Frame(){
+    Home_Frame() throws Exception{
 
         titleLabel = new JLabel("PHẦN MỀM QUẢN LÝ BÁN HÀNG", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Poppins", Font.BOLD, 40));
@@ -36,15 +36,9 @@ public class Home_Frame extends JFrame{
             dispose();
             try {
                 UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-                new Product_Manage_Frame();
-            } catch (ClassNotFoundException ex) {
-                throw new RuntimeException(ex);
-            } catch (InstantiationException ex) {
-                throw new RuntimeException(ex);
-            } catch (IllegalAccessException ex) {
-                throw new RuntimeException(ex);
-            } catch (UnsupportedLookAndFeelException ex) {
-                throw new RuntimeException(ex);
+                new Login_Frame();
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
         });
 
@@ -88,14 +82,8 @@ public class Home_Frame extends JFrame{
             try {
                 UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
                 new Login_Frame();
-            } catch (ClassNotFoundException ex) {
-                throw new RuntimeException(ex);
-            } catch (InstantiationException ex) {
-                throw new RuntimeException(ex);
-            } catch (IllegalAccessException ex) {
-                throw new RuntimeException(ex);
-            } catch (UnsupportedLookAndFeelException ex) {
-                throw new RuntimeException(ex);
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
         });
 
