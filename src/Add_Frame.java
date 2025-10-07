@@ -122,7 +122,7 @@ public class Add_Frame extends JFrame{
                 TextField.setText("");
             }
             else{
-                JOptionPane.showMessageDialog(this, "Thêm sản phẩm thất bại!");
+                JOptionPane.showMessageDialog(this, "Sản phẩm đã tồn tại!");
             }
         });
 
@@ -133,33 +133,8 @@ public class Add_Frame extends JFrame{
     }
 
     private boolean insertProduct(String maSP, String ten, String donvi, double gia, int soluong){
-        String checkSql = "SELECT 1 FROM sanpham WHERE ten = ?";
-        String insertSql = "INSERT INTO sanpham(maSP, ten, donvi, gia, soluong) VALUES(?,?,?,?,?)";
-
-        try(Connection con = Database_Connection.getConnection()){
-            try(PreparedStatement checkStmt = con.prepareStatement(checkSql)){
-                checkStmt.setString(1, ten);
-                ResultSet rs = checkStmt.executeQuery();
-                if(rs.next()){
-                    JOptionPane.showMessageDialog(this, "Sản phẩm đã tồn tại!");
-                    return false;
-                }
-            }
-
-            try(PreparedStatement pstmt = con.prepareStatement(insertSql)){
-                pstmt.setString(1, maSP);
-                pstmt.setString(2, ten);
-                pstmt.setString(3, donvi);
-                pstmt.setDouble(4, gia);
-                pstmt.setInt(5, soluong);
-                pstmt.executeUpdate();
-                return true;
-            }
-        }
-        catch(SQLException e){
-            e.printStackTrace();
-            return false;
-        }
+        ProductService productService = new ProductService();
+        return productService.addProduct(maSP, ten, donvi, gia, soluong);
     }
 
     public static void main(String[] args) throws Exception{
